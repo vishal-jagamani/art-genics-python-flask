@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add Artwork</title>
+
+    <link rel="stylesheet" href="../static/css/addart.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/addart.css')}}">
+    <script src="{{url_for('static',filename='js/sweetalert.js')}}" charset="utf-8"></script>
+
+    <style type="text/css">
+    *{
+      letter-spacing: 2px;
+    }
+
+    p{
+      color: #03e9f4;
+      font-size: 18px;
+      margin-left: 100px;
+    }
+    h2{
+      color: #03e9f4;
+      font-size: 35px;
+      margin-left: 100px;
+    }
+
+    .form{
+      margin-left: 430px;
+      margin-top: -190px;
+      height: 300vh;
+      width: 700px;
+      box-shadow: 0 0px 20px #03e9f4,
+                  0 0px 50px #03e9f4,
+                  0 0px 200px #03e9f4,
+                  0 0px 400px #03e9f4;
+
+    }
+
+
+    .input{
+      background-color: #060c21;
+      color: #03e9f4;
+      font-size: 20px;
+      font-family: sans-serif;
+      height: 30px;
+      width:480px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0px 15px #03e9f4;
+    }
+
+    .dimension1{
+      margin-left: 100px;
+      height: 30px;
+      width: 150px;
+      color: #03e9f4;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #060c21;
+      box-shadow: 0 0px 15px #03e9f4;
+    }
+    .dimension2{
+      margin-left: 50px;
+      height: 30px;
+      width: 150px;
+      color: #03e9f4;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #060c21;
+      box-shadow: 0 0px 15px #03e9f4;
+    }
+    pre{
+      color: #03e9f4;
+      font-size: 18px;
+      margin-left: 300px;
+      margin-top: -40px;
+    }
+
+    .radiobutton{
+      margin-top: 10px;
+      color: #03e9f4;
+      height: 15px;
+      width: 15px;
+      font-size: 25px;
+    }
+    .radiobutton:first-child{
+      margin-top: 50px;
+    }
+
+
+    .submitbutton{
+        margin-left: 150px;
+        padding: 15px 30px;
+        color: #03e9f4;
+        background-color: #060c21;
+        border: 1px solid #03e9f4;
+        font-size: 25px;
+        letter-spacing: 4px;
+        border-radius: 5px;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+    .submitbutton:hover{
+      background: #03e9f4;
+      color: #060c21;
+      box-shadow: 0 0 50px #03e9f4,
+                  0 0 25px #03e9f4,
+                  0 0 100px #03e9f4;
+
+    }
+
+    </style>
+
+
+  </head>
+  <body bgcolor="#060c21">
+
+    <a href="/home"><img src="../static/images/logo.png" alt="" height="160px" width="auto" class="logo"></a>
+
+    <!-- Addart form starts -->
+
+      <form class="form" action="" method="post" enctype="multipart/form-data">
+        <br><br><p>Seller Name</p>
+        <p><input type="text" name="sellername" value="" class="input" required></p><br>
+        <p>Artist/Designer Name</p>
+        <p><input type="text" name="artistname" value="" class="input" required></p><br>
+        <p>Artwork Title</p>
+        <p><input type="text" name="artworktitle" value="" class="input" required></p><br>
+        <p>Category</p>
+        <p><select class="input" name="category" required>
+          <option>Painting</option>
+          <option>Photography</option>
+          <option>Post-War Art</option>
+          <option>Impressionist & Modern Art</option>
+          <option>Pre-20th Century</option>
+          <option>Street Art</option>
+          <option>Performance Art</option>
+          <option>Mixed Media</option>
+          <option>Fashion Design</option>
+          <option>Decorative Art</option>
+          <option>Textile Art</option>
+          <option>Other</option>
+        </select></p><br>
+        <p>Year</p>
+        <p><input type="text" name="year" value="" class="input" required></p><br>
+        <p>Dimensions (in cms.)</p>
+        <p>Height</p><pre>Width</pre><input type="text" name="height" value="" class="dimension1" required><input type="text" name="width" value="" class="dimension2" required><br>
+
+        <p>Is this artwork signed   <input type="radio" name="sign" value="Yes" class="radiobutton" required>Yes <input type="radio" name="sign" value="No" class="radiobutton" required>No</p><br>
+        <p>Does this artwork come with<br> a certificate of authenticity?   <input type="radio" name="certificate" value="Yes" class="radiobutton" required>Yes <input type="radio" name="certificate" value="No" class="radiobutton" required>No</p><br>
+
+        <h2>Provenance</h2><br>
+        <p>Where did you acquire this artwork?</p>
+        <p><input type="text" name="acquire" value="" class="input" required></p><br>
+        <p>In which city the artwork located?</p>
+        <p><input type="text" name="city" value="" class="input" required></p><br>
+        <p>Your minimum price</p>
+        <p><input type="text" name="minprice" value="" class="input" required></p><br>
+        <p>Auction end Date</p>
+        <p><input type="date" name="date" value="" class="input" required></p><br>
+        <p>Auction end Time</p>
+        <p><input type="time" name="time" value="" class="input" required></p><br>
+        <p>Mobile Number</p>
+        <p><input type="text" name="phone" value="" class="input" required></p><br>
+
+        <p>Upload Photos</p>
+        <p><input type="file" name="file" value="" class="input" required></p><p>(We suggest uploading photos of the front and back of the artwork, any signatures & certificates of authenticity)</p><br><br>
+
+        <p><input type="submit" name="" value="SUBMIT" class="submitbutton"></p>
+      </form>
+
+      <!-- Addart form starts -->
+
+
+      <!-- JavaScript countdown timer starts -->
+
+      <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("{{res}}").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        sessionStorage.setItem('test', distance);
+        if(distance ==""){
+          distance = sessionStorage.getItem('test')
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+          // If the count down is over, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("myForm").submit();
+          }
+        }
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+
+          // If the count down is over, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("myForm").submit();
+          }
+        }, 1000);
+
+      </script>
+
+      <div id="divCounter"></div>
+      <script type="text/javascript">
+       if (sessionStorage.getItem("counter")) {
+         if (sessionStorage.getItem("counter") >= 10) {
+           var value = 0;
+         } else {
+           var value = sessionStorage.getItem("counter");
+         }
+       } else {
+         var value = 0;
+       }
+       document.getElementById('divCounter').innerHTML = value;
+
+       var counter = function () {
+         if (value >= 10) {
+           sessionStorage.setItem("counter", 0);
+           value = 0;
+         } else {
+           value = parseInt(value) + 1;
+           sessionStorage.setItem("counter", value);
+         }
+         document.getElementById('divCounter').innerHTML = value;
+       };
+
+       var interval = setInterval(counter, 1000);
+      </script>
+
+      <!-- JavaScript countdown timer ends -->
+
+
+
+      <!-- Sweetalert starts -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class=flashes>
+            {% for category, message in messages %}
+              <script type="text/javascript">
+                swal("{{message}}", "", "{{category}}");
+              </script>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <!-- Sweetalert ends -->
+
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Edit</title>
+
+    <style type="text/css">
+
+    /* Navigation bar starts */
+    .alogo{
+      margin-left: 20px;
+    }
+    .navbar{
+      height: 60px;
+      background-color: #060c21;
+      margin-left: -8px;
+      margin-top: -8px;
+      width: 1519px;
+    }
+    ul li{
+      font-size: 20px;
+      float: left;
+      list-style: none;
+    }
+    ul li:first-child{
+      margin-left: 150px;
+    }
+    .first{
+      margin-top: -43px;
+    }
+    .two{
+      position: absolute;
+      margin-left: 900px;
+      margin-top: -16px;
+    }
+    .navbutton{
+      text-decoration: none;
+      color: #39FF14;
+      padding:22px 30px;
+      letter-spacing: 5px;
+    }
+    .navbutton:hover{
+      color:white;
+      box-shadow: 0 0px 30px #39FF14,
+                  0 0px 60px #39FF14;
+    }
+    /* Navigation bar ends */
+
+    /* Update Information form starts */
+    .edituser{
+      position: sticky;
+      background-color: #060c21;
+      height: 160vh;
+      width: 1519px;
+      margin-left: -8px;
+    }
+    form{
+        position: absolute;
+        margin-top: 60px;
+        margin-left: 430px;
+        background-color: #060c21;
+        height: 100vh;
+        width: 700px;
+        border: 5px solid #39FF14;
+        border-radius: 20px;
+    }
+    h1{
+      color:#39FF14;
+      letter-spacing: 10px;
+      font-size: 40px;
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+    .input{
+      background-color: #060c21;
+      color: #39FF14;
+      font-size: 20px;
+      letter-spacing: 5px;
+      height: 30px;
+      width:480px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0px 15px #39FF14;
+    }
+    .p1{
+      color: #ccff00;
+      font-size: 25px;
+      letter-spacing: 5px;
+      width: 480px;
+      text-align: justify;
+      margin-left: 110px;
+
+    }
+    .p2{
+      color: #ccff00;
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin-left: 120px;
+    }
+    p{
+      margin-top: -20px;
+      margin-left: 130px;
+      width: 400px;
+      text-align: justify;
+      color: #39FF14;
+      font-size: 16px;
+    }
+    .updatebutton{
+      color:#39FF14;
+      background-color: #060c21;
+      border:1px solid #39FF14;
+      height: 60px;
+      width: 350px;
+      font-size: 20px;
+      letter-spacing: 5px;
+      border-radius: 10px;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+    .updatebutton:hover{
+      color: #060c21;
+      background-color: #39FF14;
+      box-shadow: 0 0 20px #39FF14,
+                  0 0 50px #39FF14,
+                  0 0 100px #39FF14;
+    }
+    /* Update Information form ends */
+
+    /* About starts  */
+    .about{
+      height: auto;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+    }
+    .aboutlogo{
+      position: absolute;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+    .design{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 500px;
+    }
+    .contact{
+      margin-top: 40px;
+      margin-left: 1000px;
+    }
+    /* About ends */
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Navigation bar starts -->
+    <div class="navbar">
+      <a href="/adminhome" class="alogo"><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="55px" width="auto" class="logo"></a>
+      <ul class="first">
+        <li><a href="/adminusers" class="navbutton">Users</a></li>
+        <li><a href="/adminauctions" class="navbutton">Auctions</a></li>
+        <li><a href="/pastauctions" class="navbutton">Past Auctions</a></li>
+      </ul>
+      <ul class="two">
+        <li><a href="/adminlogout" class="navbutton">Log Out</a></li>
+      </ul>
+    </div>
+    <!-- Navigation bar ends -->
+
+    <!-- Edit information form starts -->
+    <div class="edituser">
+      <form class="" action="" method="post" align="center">
+        <br><h1>{{res[1]}}</h1>
+        <br><br><br><p class="p1">Update information of this user</p>
+        <br><input type="text" name="name" value="" placeholder="Enter new fullname" class="input" required><br><br><br><br>
+        <input type="email" name="email" value="" placeholder="Enter new email-id" class="input" required><br><br><br><br>
+        <input type="text" name="phone" value="" placeholder="Enter new phone number" class="input" required><br><br><br><br>
+        <input type="text" name="address" value="" placeholder="Enter new address"class="input" rquired><br><br><br><br>
+        <br><br><input type="submit" name="" value="UPDATE INFORMATION" class="updatebutton">
+      </form>
+    </div>
+    <!-- Edit information form starts -->
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for category, message in messages %}
+            <script type="text/javascript">
+              swal("{{message}}", "", "{{category}}");
+            </script>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <!-- About starts -->
+    <div class="about">
+      <img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="100px" width="auto" class="aboutlogo">
+
+      <img src="{{url_for('static',filename='images/design(red).png')}}" alt="" height="100px" width="300px" class="design">
+
+      <img src="{{url_for('static',filename='images/contact.png')}}" alt="" height="150px" width="200px" class="contact">
+    </div>
+    <!-- About ends -->
+
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Forgot Password?</title>
+
+    <style type="text/css">
+    *{
+      letter-spacing: 2px;
+    }
+    .logo{
+      margin-top: 15px;
+      border-radius: 50px;
+    }
+
+    form{
+      height: 300px;
+      width: 400px;
+      margin-top: 100px;
+      border: 2px solid blue;
+      border-radius: 20px;
+      box-shadow: 0 0px 20px red,
+                  0 0px 50px red,
+                  0 0px 100px red,
+                  0 0px 200px red;
+    }
+    .input{
+      height: 40px;
+      width: 350px;
+      color: #ff6ec7;
+      background-color: #060c21;
+      border: 1px solid #ff6ec7;
+      border-radius: 5px;
+      font-size: 22px;
+    }
+    .button{
+      font-size: 18px;
+      padding: 10px 30px;
+      color: #ff6ec7;
+      background-color: #060c21;
+      border: 1px solid #ff6ec7;
+      border-radius: 10px;
+    }
+    .button:hover{
+      color:#060c21;
+      background-color: #ff6ec7;
+      box-shadow: 0 0px 10px #ff6ec7,
+                  0 0px 30px #ff6ec7,
+                  0 0px 50px #ff6ec7;
+    }
+
+    </style>
+
+  </head>
+  <body bgcolor="#060c21">
+    <center><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="180px" width="auto" class="logo">
+
+    <center><form class="" action="" method="post">
+      <br><br><br><br><input type="text" name="phone" value="" placeholder="Enter mobile no" class="input">
+      <br><br><br><br><input type="submit" name="" value="GENERATE OTP" class="button">
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for category, message in messages %}
+            <script type="text/javascript">
+              swal("{{message}}", "", "{{category}}");
+            </script>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+  </body>
+</html>

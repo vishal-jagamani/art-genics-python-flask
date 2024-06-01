@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Login Page</title>
+
+    <style type="text/css">
+    .logo{
+      margin-top: -10px;
+      box-shadow: 0 0px 10px #39FF14,
+                  0 0px 50px #39FF14,
+                  0 0px 100px #39FF14,
+                  0 0px 200px #39FF14;
+      border-radius: 20px;
+    }
+    form{
+      position: sticky;
+      background-color: #060c21;
+      border: 2px solid #39FF14;
+      border-radius: 40px;
+      height:400px;
+      width:500px;
+      margin-top: 100px;
+      box-shadow: 0 0px 20px #36FF14,
+                  0 0px 50px #36FF14,
+                  0 0px 100px #36FF14;
+    }
+    h1{
+      color: #39FF14;
+      font-size: 40px;
+      letter-spacing: 10px;
+    }
+    .input{
+      background-color: #060c21;
+      color:#39FF14;
+      font-size: 20px;
+      letter-spacing: 5px;
+      height: 30px;
+      width:350px;
+      border:none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #39FF14,
+                  0 0 20px #39FF14;
+    }
+    .button{
+      color:#39FF14;
+      background-color: #060c21;
+      border:1px solid #39FF14;
+      height: 50px;
+      width: 200px;
+      font-size: 25px;
+      letter-spacing: 10px;
+      border-radius: 5px;
+    }
+    .button:hover{
+      color:#060c21;
+      background-color: #39FF14;
+      box-shadow: 0 0 20px #39FF14,
+                  0 0 40px #39ff14;
+    }
+    </style>
+
+  </head>
+  <body bgcolor="#060c21">
+      <center><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="180px" width="auto" class="logo">
+
+      <form class="" action="" method="post">
+        <h1>Admin Login</h1>
+        <br><p><input type="text" name="name" value="" placeholder="Enter usrname" class="input"></p>
+        <br><p><input type="password" name="password" value="" placeholder="Enter password" class="input"></p>
+        <br><br><p><input type="submit" name="" value="LOGIN" class="button"></p>
+      </form>
+
+      <!-- Sweetalert starts -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class=flashes>
+            {% for category, message in messages %}
+              <script type="text/javascript">
+                swal("{{message}}", "", "{{category}}");
+              </script>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <!-- Sweetalert ends -->
+
+  </body>
+</html>

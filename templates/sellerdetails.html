@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Seller Details</title>
+
+    <style type="text/css">
+
+    /* Navigation bar starts */
+    .alogo{
+      margin-left: 20px;
+    }
+    .navbar{
+      height: 60px;
+      background-color: #060c21;
+      margin-left: -8px;
+      margin-top: -8px;
+      width: 1519px;
+    }
+    ul li{
+      font-size: 20px;
+      float: left;
+      list-style: none;
+    }
+    ul li:first-child{
+      margin-left: 150px;
+    }
+    .first{
+      margin-top: -43px;
+    }
+    .two{
+      position: absolute;
+      margin-left: 900px;
+      margin-top: -16px;
+    }
+    .navbutton{
+      text-decoration: none;
+      color: #39FF14;
+      padding:22px 30px;
+      letter-spacing: 5px;
+    }
+    .navbutton:hover{
+      color:white;
+      transition: all .2s;
+      box-shadow: 0 0px 30px #39FF14,
+                  0 0px 60px #39FF14;
+    }
+    /* Navigation bar ends */
+
+    /* User details starts */
+    .userdetails{
+      position: sticky;
+      background-color: #060c21;
+      height: 110vh;
+      width: 1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+    }
+    .table{
+      height: 70vh;
+      width: 100vh;
+      margin-top: 100px;
+      margin-left: 400px;
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ccff00,
+                  0 0 40px #ccff00,
+                  0 0 60px #ccff00,
+                  0 0 100px #ccff00;
+
+    }
+    h1{
+      font-size: 40px;
+      color: #39ff14;
+      letter-spacing: 10px;
+      text-decoration: underline;
+    }
+    span{
+      font-size: 22px;
+      color: white;
+      letter-spacing: 4px;
+    }
+    .details{
+      color: #ccff00;
+      font-size: 28px;
+      letter-spacing: 10px;
+
+    }
+    /* User details ends */
+
+    /* About starts  */
+    .about{
+      height: auto;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+    }
+    .aboutlogo{
+      position: absolute;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+    .design{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 500px;
+    }
+    .contact{
+      margin-top: 40px;
+      margin-left: 1000px;
+    }
+    /* About ends */
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Navigation bar starts -->
+    <div class="navbar">
+      <a href="/home" class="alogo"><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="55px" width="auto" class="logo"></a>
+      <ul class="first">
+        <li><a href="/artworks" class="navbutton">Artworks</a></li>
+        <li><a href="/pastauctions" class="navbutton">Past Auctions</a></li>
+        <li><a href="/consign" class="navbutton">Consign</a></li>
+        <li><a href="/about" class="navbutton">About Us</a></li>
+      </ul>
+      <ul class="two">
+        <li><a href="/profile" class="navbutton">Profile</a></li>
+        <li><a href="/logout" class="navbutton">Log Out</a></li>
+      </ul>
+    </div>
+    <!-- Navigation bar ends -->
+
+    <!-- User details starts -->
+    <div class="userdetails">
+
+      <div class="table">
+        <center><h1>Seller Information</h1>
+        <br><br><br><p class="details"><span>Name: </span>{{res[1]}}</p>
+        <p class="details"><span>E-mail ID: </span>{{res[2]}}</p>
+        <p class="details"><span>Mobile No: </span>{{res[3]}}</p>
+        <p class="details"><span>Address: </span>{{res[4]}}</p>
+      </div>
+    </div>
+    <!-- User details ends -->
+
+    <!-- About starts -->
+    <div class="about">
+      <img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="100px" width="auto" class="aboutlogo">
+
+      <img src="{{url_for('static',filename='images/design(red).png')}}" alt="" height="100px" width="300px" class="design">
+
+      <img src="{{url_for('static',filename='images/contact.png')}}" alt="" height="150px" width="200px" class="contact">
+    </div>
+    <!-- About ends -->
+
+  </body>
+</html>

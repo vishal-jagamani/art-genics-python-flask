@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Past Auctions</title>
+
+    <style type="text/css">
+    /* Navigation bar starts */
+    .alogo{
+      margin-left: 20px;
+    }
+    .navbar{
+      height: 60px;
+      background-color: #060c21;
+      margin-left: -8px;
+      margin-top: -8px;
+      width: 1519px;
+    }
+    ul li{
+      font-size: 20px;
+      float: left;
+      list-style: none;
+    }
+    ul li:first-child{
+      margin-left: 150px;
+    }
+    .first{
+      margin-top: -43px;
+    }
+    .two{
+      position: absolute;
+      margin-left: 900px;
+      margin-top: -16px;
+    }
+    .navbutton{
+      text-decoration: none;
+      color: #39FF14;
+      padding:22px 30px;
+      letter-spacing: 5px;
+    }
+    .navbutton:hover{
+      color:white;
+      transition: all .2s;
+      box-shadow: 0 0px 30px #39FF14,
+                  0 0px 60px #39FF14;
+    }
+    /* Navigation bar ends */
+
+    /* Winner table starts */
+    .winnertable{
+      position: sticky;
+      background-color: #060c21;
+      width: 1519px;
+      margin-left: -8px;
+      margin-top: -25px;
+    }
+    h1{
+      color: #39FF14;
+      font-size: 40px;
+      letter-spacing: 10px;
+      text-decoration: underline;
+    }
+    table{
+      border-radius: 10px;
+      cell-padding: 10px 20px;
+      border-collapse: collapse;
+    }
+    th{
+      color: #ccff00;
+      font-size: 25px;
+      letter-spacing: 10px;
+      padding: 10px 20px;
+      border: 2px solid white;
+    }
+    td{
+      color: white;
+      font-size: 22px;
+      letter-spacing: 8px;
+      padding: 10px 20px;
+      border: 2px solid white;
+    }
+    /* mWinner table ends */
+
+    /* About starts  */
+    .about{
+      height: auto;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+    }
+    .aboutlogo{
+      position: absolute;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+    .design{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 500px;
+    }
+    .contact{
+      margin-top: 40px;
+      margin-left: 1000px;
+    }
+    /* About ends */
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Navigation bar starts -->
+    <div class="navbar">
+      <a href="/home" class="alogo"><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="55px" width="auto" class="logo"></a>
+      <ul class="first">
+        <li><a href="/artworks" class="navbutton">Artworks</a></li>
+        <li><a href="/pastauctions" class="navbutton">Past Auctions</a></li>
+        <li><a href="/consign" class="navbutton">Consign</a></li>
+      </ul>
+      <ul class="two">
+        <li><a href="/profile/{{session.id}}" class="navbutton">Profile</a></li>
+        <li><a href="/logout" class="navbutton">Log Out</a></li>
+      </ul>
+    </div>
+    <!-- Navigation bar ends -->
+
+    <div class="winnertable">
+      <center><h1>Past Auction Winners</h1></center>
+      <center><table border="2">
+        <tr>
+          <th>Seller</th>
+          <th>Seller<br>Contact</th>
+          <th>Artist</th>
+          <th>Art Title</th>
+          <th>Auctioned <br>Price</th>
+          <th>Winner</th>
+          <th>Artwork</th>
+        </tr>
+        {% for i in winner %}
+        <tr>
+          <td>{{i[1]}}</td>
+          <td>{{i[2]}}</td>
+          <td>{{i[3]}}</td>
+          <td>{{i[4]}}</td>
+          <td>{{i[5]}}</td>
+          <td>{{i[6]}}</td>
+          <td><img src="../static/upload/addart/{{i[7]}}" alt="" height="300px" width="auto"></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <!-- About starts -->
+    <div class="about">
+      <img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="100px" width="auto" class="aboutlogo">
+
+      <img src="{{url_for('static',filename='images/design(red).png')}}" alt="" height="100px" width="300px" class="design">
+
+      <img src="{{url_for('static',filename='images/contact.png')}}" alt="" height="150px" width="200px" class="contact">
+    </div>
+    <!-- About ends -->
+
+  </body>
+</html>

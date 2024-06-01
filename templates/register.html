@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <script src="{{url_for('static',filename='js/sweetalert.js')}}" charset="utf-8"></script>
+
+    <style type="text/css">
+    *{
+      letter-spacing: 2px;
+    }
+    body{
+      background-color: #060c21;
+    }
+
+    /* Logo starts */
+
+    .a{
+      height:150vh;
+      background-color: #060c21;
+      margin-left: -8px;
+      margin-top: -21px;
+      width:1536px;
+    }
+
+    /* Form starts */
+    form{
+        margin-left: 430px;
+        margin-top: -172px;
+        height: 140vh;
+        width: 700px;
+        box-shadow: 0 0px 20px #39FF14,
+                    0 0px 50px #39FF14,
+                    0 0px 200px #39FF14,
+                    0 0px 400px #39FF14;
+    }
+    h1{
+      color:#39FF14;
+      letter-spacing: 10px;
+      font-size: 45px;
+      margin-top: 10px;
+    }
+    .input{
+      background-color: #060c21;
+      color: #39FF14;
+      font-size: 20px;
+      letter-spacing: 5px;
+      height: 30px;
+      width:480px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0px 15px #39FF14;
+    }
+    .p1{
+      color: #ccff00;
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin-left: 120px;
+    }
+    p{
+      margin-top: -20px;
+      margin-left: 130px;
+      width: 400px;
+      text-align: justify;
+      color: #39FF14;
+      font-size: 16px;
+    }
+
+    .sign{
+      color:#39FF14;
+      background-color: #060c21;
+      border:1px solid #39FF14;
+      height: 50px;
+      width: 150px;
+      font-size: 20px;
+      font-family: sans-serif;
+      border-radius: 10px;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+    .sign:hover{
+      color: #060c21;
+      background-color: #39FF14;
+      box-shadow: 0 0 25px #39FF14,
+                  0 0 50px #39FF14,
+                  0 0 100px #39FF14;
+    }
+
+    .login{
+      color:white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .login:hover{
+      color: #39ff14;
+      text-decoration: underline;
+    }
+    /* From ends */
+    </style>
+
+
+  </head>
+  <body>
+
+
+    <!-- Registration form ends -->
+
+        <img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="160px" width="auto" class="logo"></center>
+
+        <form class="" action="" method="post" align="center">
+            <br><br><h1>REGISTRATION</h1><br><br>
+            <input type="text" name="name" value="" placeholder="Enter fullname" class="input" required><br><br><br>
+            <input type="email" name="email" value="" placeholder="Enter email-id" class="input" required><br><br><br>
+            <input type="text" name="phone" value="" placeholder="Enter phone number" class="input" required><br><br><br>
+            <input type="text" name="address" value="" placeholder="Enter address"class="input" rquired><br><br><br><br>
+            <input type="password" name="password" value="" placeholder="Enter password" class="input" required><br><br><br><br>
+            <p class="p1">Password must be of:</p><br>
+              <p>1) Minimum 8 characters*
+              <br><br>2) The alphabets must be between[a-z]*
+              <br><br>3) At least one alphabet should be of Upper Case[A-Z]*
+              <br><br>4) At least 1 number or digit between[0-9]*</p><br>
+            <p>How you want to use Art Genics as:</p>
+            <select class="input" name="category" reuired>
+              <option>Seller</option>
+              <option>Buyer</option>
+            </select><br><br><br><br><br>
+            <p>*By Signing-up you agree to terms and conditions of Art Genics</p>
+            <input type="submit" name="" value="SIGN-UP" class="sign"><br><br><br><br>
+            <a href="/" class="login">Already have an account? Login</a>
+          </form>
+        </div>
+
+    <!-- Registration form ends -->
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for category, message in messages %}
+            <script type="text/javascript">
+              swal("{{message}}", "", "{{category}}");
+            </script>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+  </body>
+</html>

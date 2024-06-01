@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Art</title>
+
+    <style type="text/css">
+    /* Navigation bar starts */
+    .alogo{
+      margin-left: 20px;
+    }
+    .navbar{
+      height: 60px;
+      background-color: #060c21;
+      margin-left: -8px;
+      margin-top: -8px;
+      width: 1519px;
+    }
+    ul li{
+      font-size: 20px;
+      float: left;
+      list-style: none;
+    }
+    ul li:first-child{
+      margin-left: 150px;
+    }
+    .first{
+      margin-top: -43px;
+    }
+    .two{
+      position: absolute;
+      margin-left: 900px;
+      margin-top: -16px;
+    }
+    .navbutton{
+      text-decoration: none;
+      color: #39FF14;
+      padding:22px 30px;
+      letter-spacing: 5px;
+    }
+    .navbutton:hover{
+      color:white;
+      transition: all .2s;
+      box-shadow: 0 0px 30px #39FF14,
+                  0 0px 60px #39FF14;
+    }
+    /* Navigation bar ends */
+
+
+    /* Artwork details starts */
+
+    .b{
+      position: sticky;
+      background-color: #060c21;
+      height: 100vh;
+      width: 1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .artimage{
+      margin-top: 80px;
+    }
+    .image{
+      box-shadow: 0 0 20px #ccff00,
+                  0 0 50px #ccff00,
+                  0 0 100px #ccff00;
+    }
+
+
+    .artdetails{
+      margin-left: 150px;
+    }
+    .arttitle{
+      color: #39FF14;
+      font-size: 50px;
+      letter-spacing: 20px;
+      text-shadow: 0 10px 20px #39ff14;
+      text-decoration: underline;
+    }
+
+    .artistbutton{
+      color: #ccff00;
+      font-size: 30px;
+      letter-spacing: 8px;
+      text-decoration: none;
+    }
+    .artistbutton:hover{
+      text-decoration: underline;
+      transition: all .2s;
+      text-shadow: 0 5px 20px #ccff00;
+    }
+    .details{
+      color: #ccff00;
+      font-size: 28px;
+      letter-spacing: 8px;
+    }
+    span{
+      font-size: 22px;
+      color: white;
+      letter-spacing: 5px;
+    }
+
+    /* Artwork details ends */
+
+    /* Bidding starts */
+
+    .c{
+      width: 1519px;
+      margin-left: -8px;
+      background-color: #060c21;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Bidding table starts */
+    .tableform{
+      width: 500px;
+      margin-left: 500px;
+      box-shadow: 0 0 20px #ccff00,
+                  0 0 50px #ccff00,
+                  0 0 100px #ccff00,
+                  0 0 120px #ccff00;
+    }
+    .tablep{
+      color: #ccff00;
+      font-size: 30px;
+      letter-spacing: 8px;
+    }
+    table{
+      width: 400px;
+      border-radius: 10px;
+      cell-padding: 10px 20px;
+      border-collapse: collapse;
+    }
+    th{
+      color: #ccff00;
+      font-size: 22px;
+      letter-spacing: 8px;
+      padding: 10px 20px;
+      border: 2px solid white;
+    }
+    td{
+      color: white;
+      font-size: 22px;
+      letter-spacing: 8px;
+      padding: 10px 20px;
+      border: 2px solid white;
+    }
+    .buyerbutton{
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+      letter-spacing: 8px;
+    }
+    .buyerbutton:hover{
+      color: #ccff00;
+      text-decoration: underline;
+    }
+    /* Bidding table ends */
+
+    /* Bidding ends */
+
+
+    /* About starts  */
+    .about{
+      position: sticky;
+      height: auto;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+    }
+    .aboutlogo{
+      position: absolute;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+    .design{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 500px;
+    }
+    .contact{
+      margin-top: 40px;
+      margin-left: 1000px;
+    }
+    /* About ends */
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Navigation bar starts -->
+    <div class="navbar">
+      <a href="/home" class="alogo"><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="55px" width="auto" class="logo"></a>
+      <ul class="first">
+        <li><a href="/artworks" class="navbutton">Artworks</a></li>
+        <li><a href="/pastauctions" class="navbutton">Past Auctions</a></li>
+        <li><a href="/consign" class="navbutton">Consign</a></li>
+        <li><a href="/about" class="navbutton">About Us</a></li>
+      </ul>
+      <ul class="two">
+        <li><a href="/profile" class="navbutton">Profile</a></li>
+        <li><a href="/logout" class="navbutton">Log Out</a></li>
+      </ul>
+    </div>
+    <!-- Navigation bar ends -->
+
+
+      <!-- Artwork details starts -->
+
+
+      <div class="b">
+        <div class="artimage">
+          <center><p><img src="../static/upload/addart/{{res[15]}}" alt="" height="450px" width="auto" class="image"></p>
+        </div>
+
+        <div class="artdetails">
+          <p class="arttitle">{{res[3]}}</p>
+          <p class="details"><span>Artist:</span> <a href="/sellerdetails/{{res[0]}}" class="artistbutton">{{res[2]}}</a></p>
+          <p class="details"><span>Medium:</span> {{res[4]}}</p>
+          <p class="details"><span>Dimensions:</span> {{res[6]}}cms X {{res[7]}}cms.</p>
+          <p class="details"><span>Artwork is signed:</span> {{res[8]}}</p>
+          <p class="details"><span>Certificate of Authenticity <br>is included:</span> {{res[9]}}</p>
+          <p class="details"><span>Minimum Auctioned Price:</span> {{res[12]}}</p>
+          <br><p><span>Bidding ends in:</span><br> <p id="demo" class="details"></p></p>
+        </div>
+      </div>
+
+
+      <!-- Artwork details ends -->
+
+      <form  id="myForm" class="" action="/finalbid/{{res[0]}}" method="post">
+        <input type="hidden" name="result" value="0">
+      </form>
+
+      <!-- JavaScript countdown timer starts -->
+      <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("{{res[13]}}").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        sessionStorage.setItem('test', distance);
+        if(distance ==""){
+          distance = sessionStorage.getItem('test')
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "Days " + hours + "Hrs " + minutes + "Min " + seconds + "Sec ";
+
+          // If the count down is over, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("myForm").submit();
+          }
+        }
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "Days " + hours + "Hrs "
+        + minutes + "Min " + seconds + "Sec ";
+
+
+          // If the count down is over, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("myForm").submit();
+          }
+        }, 1000);
+
+      </script>
+
+      <form  id="myForm" class="" action="/result/{{rest[0]}}" method="post">
+        <input type="hidden" name="result" value="0">
+      </form>
+
+      <!-- Bidding starts -->
+      <div class="c">
+        <div class="tableform">
+        <!-- Bidding table starts -->
+          <center><p class="tablep">Amount Bidded</p>
+            <center><table border="2px">
+              <tr>
+                <center><th>Bidder Name</th>
+                <center><th>Amount<br> Bidded</th>
+              </tr>
+              {% for i in rest %}
+              <tr>
+                <center><td><a href="/buyerdetails/{{res[0]}}" class="buyerbutton">{{i[1]}}</a></td>
+                <center><td>{{i[2]}}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        <!-- Bidding table ends -->
+
+      </div>
+      <!-- Bidding starts -->
+
+      <!-- About starts -->
+      <div class="about">
+        <img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="100px" width="auto" class="aboutlogo">
+
+        <img src="{{url_for('static',filename='images/design(red).png')}}" alt="" height="100px" width="300px" class="design">
+
+        <img src="{{url_for('static',filename='images/contact.png')}}" alt="" height="150px" width="200px" class="contact">
+      </div>
+      <!-- About ends -->
+
+
+
+  </body>
+</html>

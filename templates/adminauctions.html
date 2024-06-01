@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Auctions</title>
+
+    <style type="text/css">
+    /* Navigation bar starts */
+    .alogo{
+      margin-left: 20px;
+    }
+    .navbar{
+      height: 60px;
+      background-color: #060c21;
+      margin-left: -8px;
+      margin-top: -8px;
+      width: 1519px;
+    }
+    ul li{
+      font-size: 20px;
+      float: left;
+      list-style: none;
+    }
+    ul li:first-child{
+      margin-left: 150px;
+    }
+    .first{
+      margin-top: -43px;
+    }
+    .two{
+      position: absolute;
+      margin-left: 900px;
+      margin-top: -16px;
+    }
+    .navbutton{
+      text-decoration: none;
+      color: #39FF14;
+      padding:22px 30px;
+      letter-spacing: 5px;
+    }
+    .navbutton:hover{
+      color:white;
+      transition: all .2s;
+      box-shadow: 0 0px 30px #39FF14,
+                  0 0px 60px #39FF14;
+    }
+    /* Navigation bar ends */
+    /* Artworks listing starts */
+    .demoartworks{
+      position: sticky;
+      margin-top: 2px;
+      margin-left: -8px;
+      width: 1519px;
+      background-color: #060c21;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 100px;
+    }
+    .demoart{
+      margin-left: 60px;
+      margin-top: 80px;
+      background-color: #060c21;
+      margin-left: 50px;
+    }
+    .demoart:hover{
+      transform: translateY(-10px);
+      border-radius: 20px;
+      transition: all .3s;
+    }
+    .arttitle{
+      color: #ff6ec7;
+      font-size: 35px;
+      letter-spacing: 15px;
+      text-decoration: underline;
+    }
+    .artistname{
+      color: #39FF14;
+      font-size: 25px;
+      letter-spacing: 8px;
+      margin-top: -25px;
+    }
+    .auctionperiod{
+      color: white;
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
+    .datetime{
+      color: white;
+      font-size: 20px;
+      letter-spacing: 4px;
+    }
+    .auctiondate{
+      font-size: 28px;
+      color: #ff6ec7;
+      letter-spacing: 10px;
+      margin-top: -10px;
+    }
+    .deletebutton{
+      text-decoration: none;
+      color: #39FF14;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+    .deletebutton:hover{
+      text-decoration: underline;
+    }
+
+    /* Artworks listing ends */
+
+    /* About starts  */
+    .about{
+      margin-top: 2px;
+      height: auto;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+    }
+    .aboutlogo{
+      position: absolute;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+    .design{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 500px;
+    }
+    .contact{
+      margin-top: 40px;
+      margin-left: 1000px;
+    }
+    /* About ends */
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Navigation bar starts -->
+    <div class="navbar">
+      <a href="/adminhome" class="alogo"><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="55px" width="auto" class="logo"></a>
+      <ul class="first">
+        <li><a href="/adminusers" class="navbutton">Users</a></li>
+        <li><a href="/adminauctions" class="navbutton">Auctions</a></li>
+        <li><a href="/adminpastauctions" class="navbutton">Past Auctions</a></li>
+      </ul>
+      <ul class="two">
+        <li><a href="/adminlogout" class="navbutton">Log Out</a></li>
+      </ul>
+    </div>
+    <!-- Navigation bar ends -->
+
+      <!-- Artworks listing starts -->
+      <div class="demoartworks">
+        {% for i in res %}
+        <div class="demoart">
+          <a href="/adminart/{{i[0]}}"><img src="../static/upload/addart/{{i[15]}}" alt="" height="450px" width="auto" class="artimage"></a>
+          <br><p class="arttitle">{{i[3]}}</p>
+          <p class="artistname">{{i[1]}}</p>
+          <p class="auctionperiod">Bidding end Date & Time:<p class="auctiondate">{{i[12]}}</p></p>
+          <p><a href="/deleteartwork/{{i[0]}}" class="deletebutton">DELETE ARTWORK</a></p>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- Artworks listing  ends -->
+
+
+      <!-- About starts -->
+      <div class="about">
+        <img src="../static/images/logo.png" alt="" height="140px" width="auto" class="aboutlogo">
+
+        <img src="../static/images/design(red).png" alt="" height="140px" width="350px" class="design">
+
+        <img src="../static/images/contact.png" alt="" height="200px" width="250px" class="contact">
+      </div>
+      <!-- About ends -->
+
+  </body>
+</html>

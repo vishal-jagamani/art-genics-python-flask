@@ -1,0 +1,212 @@
+           <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Art Genics</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <script src="{{url_for('static',filename='js/sweetalert.js')}}" charset="utf-8"></script>
+
+    <style type="text/css">
+    *{
+      letter-spacing: 2px;
+    }
+
+    /* Logo starts */
+    .a{
+      height:100.65vh;
+      background-color: #060C21;
+      margin-left: -8px;
+      margin-top: -21px;
+      width:1536px;
+    }
+
+    .logo{
+      margin-top: 15px;
+      box-shadow: 0 0px 10px #1b03a3,
+                  0 0px 50px #1b03a3,
+                  0 0px 100px #1b03a3,
+                  0 0px 200px #1b03a3;
+      border-radius: 50px;
+    }
+    .adminloginbutton{
+      position: absolute;
+      text-decoration: none;
+      color: #39FF14;
+      font-size: 20px;
+      letter-spacing: 10px;
+      padding: 15px 30px;
+      border: 1px solid #39ff14;
+      border-radius: 10px;
+      margin-top: -150px;
+      margin-left: 1200px;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+    .adminloginbutton:hover{
+      color: #060c21;
+      background-color: #39FF14;
+      box-shadow: 0 0 20px #39ff14,
+                  0 0 40px #39FF14;
+    }
+    /* Logo ends */
+
+
+
+    /* Image starts */
+
+    .paint{
+      position: absolute;
+      margin-left: 100px;
+      margin-top: 50px;
+      border: 2px solid #1b03a3;
+      border-radius: 5px;
+      box-shadow: 0 0px 10px #1b03a3,
+                  0 0px 50px #1b03a3,
+                  0 0px 100px #1b03a3;
+    }
+
+    /* Image starts */
+
+    /* Bid image starts */
+
+    .bid{
+      position: absolute;
+      margin-left: 461.5px;
+      margin-top: 50px;
+    }
+
+    /* Bid image ends */
+
+
+    /* Form starts */
+
+    form{
+      position: absolute;
+      background-color: #060c21;
+      border: 2px solid #39FF14;
+      border-radius: 40px;
+      height:400px;
+      width:500px;
+      margin-left: 930px;
+      margin-top: 50px;
+      box-shadow: 0 0px 20px #36FF14,
+                  0 0px 50px #36FF14,
+                  0 0px 100px #36FF14;
+    }
+
+    h1{
+      color:#39FF14;
+      text-align: center;
+      font-size: 45px;
+      margin-top: 10px;
+    }
+
+    .formp{
+      color:white;
+      font-size: 20px;
+      margin-top: -15px;
+    }
+
+    .input{
+      background-color: #060c21;
+      color:#39FF14;
+      font-size: 20px;
+      letter-spacing: 5px
+      height: 30px;
+      width:350px;
+      border:none;
+      border-radius: 5px;
+      box-shadow: 0 0px 15px #39FF14;
+    }
+
+    .forgot{
+      margin-left: 200px;
+      color:white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .forgot:hover{
+      color:#36FF14;
+      text-decoration: underline;
+      transition: all .2s;
+      text-shadow: #39FF14;
+    }
+
+    .loginbutton{
+      color:#39FF14;
+      background-color: #060c21;
+      border:1px solid #39FF14;
+      height: 40px;
+      width: 150px;
+      font-size: 18px;
+      letter-spacing: 10px;
+      border-radius: 5px;
+    }
+    .loginbutton:hover{
+      color:#060c21;
+      background-color: #39FF14;
+      box-shadow: 0 0 20px #39FF14,
+                  0 0 40px #39ff14;
+    }
+
+    .sign{
+      color:white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .sign:hover{
+      color: #39ff14;
+      text-decoration: underline;
+    }
+
+    /* Form ends */
+
+    </style>
+
+  <body>
+
+    <!-- Form starts -->
+
+    <div class="a">
+
+
+      <center><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="180px" width="auto" class="logo"></center>
+
+      <a href="/adminlogin" class="adminloginbutton">ADMIN LOGIN</a>
+
+        <img src="../static/images/index.jpg" alt="" height="450px" width="auto" class="paint">
+        <img src="{{url_for('static',filename='images/index.jpg')}}" alt="" height="450px" width="auto" class="paint">
+
+        <img src="../static/images/bid.png" alt="" height="450px" width="auto" class="bid">
+        <img src="{{url_for('static',filename='images/bid.png')}}" alt="" height="450px" width="auto" class="bid">
+
+      <center><form class="" action="" method="post">
+        <h1>LOGIN</h1>
+        <center><p class="formp">Welcome to the art world</p><br>
+        <input type="text" name="email" value="" placeholder="Enter email-id" class="input" required><br><br>
+        <input type="password" name="password" value="" placeholder="Enter password" class="input" required><br><br>
+        <a href="/forgot" class="forgot">Forgot password?</a><br><br>
+
+        <input type="submit" name="" value="LOGIN" class="loginbutton"><br><br>
+        <a href="/register" class="sign">Don't have an account? Sign-up</a>
+      </form>
+    </div>
+
+    <!-- Sweetalert starts -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flashes>
+          {% for category, message in messages %}
+            <script type="text/javascript">
+              swal("{{message}}", "", "{{category}}");
+            </script>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <!-- Sweetalert ends -->
+
+    <!-- Form ends -->
+
+  </body>
+</html>

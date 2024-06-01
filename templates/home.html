@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Art Genics</title>
+
+    <style type="text/css">
+    /* Navigation bar starts */
+    .alogo{
+      margin-left: 20px;
+    }
+    .navbar{
+      height: 60px;
+      background-color: #060c21;
+      margin-left: -8px;
+      margin-top: -8px;
+      width: 1519px;
+    }
+    ul li{
+      font-size: 20px;
+      float: left;
+      list-style: none;
+    }
+    ul li:first-child{
+      margin-left: 150px;
+    }
+    .first{
+      margin-top: -43px;
+    }
+    .two{
+      position: absolute;
+      margin-left: 900px;
+      margin-top: -16px;
+    }
+    .navbutton{
+      text-decoration: none;
+      color: #39FF14;
+      padding:22px 30px;
+      letter-spacing: 5px;
+    }
+    .navbutton:hover{
+      color:white;
+      transition: all .2s;
+      box-shadow: 0 0px 30px #39FF14,
+                  0 0px 60px #39FF14;
+    }
+    /* Navigation bar ends */
+
+    /* Image slideshow starts */
+
+    .b{
+    height: auto;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      position: relative;
+      margin-left: -8px;
+      width:1519px;
+      margin-top: -1px;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    /* Image slideshow ends */
+
+    /* Flex grid starts */
+
+    .c{
+      height: 90vh;
+      width: 1519px;
+      margin-left:-8px;
+      margin-top: -4px;
+      background-color: #060c21;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .c > div{
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+
+    .art1{
+      height: 500px;
+      width:auto;
+      border: 2px solid #ff6ec7;
+      border-radius: 5px;
+      background: linear-gradient(235deg, #89ff00,#060c21,#00bcd4);
+      box-shadow: -0px 10px 15px #ff6ec7;
+      margin-left: 60px;
+    }
+    .p1{
+      color:white;
+      font-size: 25px;
+      margin-left:60px;
+      width: auto;
+    }
+
+    .art2{
+      height: 500px;
+      width:auto;
+      border: 2px solid #39FF14;
+      border-radius: 5px;
+      background: linear-gradient(235deg, #89ff00,#060c21,#00bcd4);
+      box-shadow: -0px 10px 15px #39FF14;
+    }
+    .p2{
+      color:white;
+      font-size: 25px;
+      width: 420px;
+    }
+
+
+    .art3{
+      height: 500px;
+      width:auto;
+      border: 2px solid #ff6ec7;
+      border-radius: 5px;
+      background: linear-gradient(235deg, #89ff00,#060c21,#00bcd4);
+      box-shadow: -0px 10px 15px #ff6ec7;
+    }
+    .p3{
+      color:white;
+      font-size: 25px;
+    }
+
+    .c > div:hover{
+      transform: translateY(-15px);
+      transition: all .3s;
+    }
+
+    /* Flex grid starts */
+
+    /* Monalisa starts */
+
+    .d{
+      height: 80vh;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+    }
+    .mona{
+      height: 500px;
+      width:auto;
+      border: 2px solid #ccff00;
+      border-radius: 5px;
+      box-shadow: -0px 10px 15px #89ff00;
+      margin-left: 70px;
+      margin-top: 50px;
+    }
+    h2{
+      position: absolute;
+      color:#ccff00;
+      font-size: 40px;
+      margin-left:500px;
+      margin-top: -500px;
+    }
+    .monap{
+      color:white;
+      width:900px;
+      text-align: justify;
+      font-size: 30px;
+      position: absolute;
+      margin-left: 500px;
+      margin-top: -400px;
+    }
+    .monartist{
+      position: absolute;
+      color:#ccff00;
+      font-size: 40px;
+      margin-left:500px;
+      margin-top: -50px;
+    }
+
+    /* Monalisa starts */
+
+    /* Starry night starts */
+
+    .e{
+      height: 80vh;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+    }
+    .starry{
+      height: 500px;
+      width:auto;
+      border: 2px solid #ccff00;
+      border-radius: 5px;
+      background: linear-gradient(235deg, #89ff00,#060c21,#00bcd4);
+      box-shadow: -0px 10px 15px #bc13fe;
+      margin-left: 800px;
+      margin-top: 50px;
+    }
+    .st{
+      color:#bc13fe;
+      margin-left: 70px;
+      margin-top: -500px;
+    }
+    .starp{
+      color:white;
+      width:650px;
+      text-align: justify;
+      font-size: 30px;
+      margin-left: 70px;
+      margin-top: -400px;
+    }
+    .starartist{
+      color:#bc13fe;
+      font-size: 40px;
+      margin-left:70px;
+      margin-top: 20px;
+    }
+    .starlocation{
+      color:#bc13fe;
+      font-size: 40px;
+      margin-left:70px;
+      margin-top: 100px;
+    }
+
+    /* Starry night ends */
+
+    /* About starts  */
+    .about{
+      height: auto;
+      background-color: #060c21;
+      width:1519px;
+      margin-left: -8px;
+      margin-top: 2px;
+    }
+    .aboutlogo{
+      position: absolute;
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+    .design{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 500px;
+    }
+    .contact{
+      margin-top: 40px;
+      margin-left: 1000px;
+    }
+    /* About ends */
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Navigation bar starts -->
+    <div class="navbar">
+      <a href="/home" class="alogo"><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="55px" width="auto" class="logo"></a>
+      <ul class="first">
+        <li><a href="/artworks" class="navbutton">Artworks</a></li>
+        <li><a href="/pastauctions" class="navbutton">Past Auctions</a></li>
+        <li><a href="/consign" class="navbutton">Consign</a></li>
+      </ul>
+      <ul class="two">
+        <li><a href="/profile/{{session.id}}" class="navbutton">Profile</a></li>
+        <li><a href="/logout" class="navbutton">Log Out</a></li>
+      </ul>
+    </div>
+    <!-- Navigation bar ends -->
+
+      <!-- Image slideshow starts  -->
+
+      <div class="b">
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+              <img src="{{url_for('static',filename='images/homeslide1.jpg')}}" height="auto" width="1519px">
+          </div>
+
+          <div class="mySlides fade">
+              <img src="{{url_for('static',filename='images/homeslide2.jpg')}}" height="auto" width="1519px">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="{{url_for('static',filename='images/homeslide3.jpg')}}" height="auto" width="1519px">
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          var slideIndex = 0;
+          showSlides();
+
+          function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+          }
+
+        </script>
+      </div>
+
+      <!-- Image slideshow ends -->
+
+      <!-- Grid box starts -->
+
+      <div class="c">
+        <div class="1">
+          <img src="{{url_for('static',filename='images/home1.jpg')}}" alt="" class="art1">
+          <p class="p1">“Every artist was first an amateur”</p>
+        </div>
+      <div class="2">
+        <img src="{{url_for('static',filename='images/home2.jpg')}}" alt="" class="art2">
+        <p class="p2">“Art enables us to find ourselves and lose ourselves at the same time.”</p>
+      </div>
+      <div class="3">
+        <img src="{{url_for('static',filename='images/home3.jpg')}}" alt="" class="art3">
+        <p class="p3">“A picture is a poem without words”</p>
+      </div>
+      </div>
+
+      <!-- Grid box starts -->
+
+
+
+      <!-- Monalisa starts -->
+
+      <div class="d">
+            <!-- <img src="../Images/mona.jpg" alt="" class="mona"> -->
+            <img src="{{url_for('static',filename='images/mona.jpg')}}" alt="" class="mona">
+            <h2>Monalisa (1503-1519)</h2>
+            <p class="monap"> Mona Lisa, also known as La Gioconda, is the wife of Francesco del Giocondo. This painting is painted as oil on wood. The original painting size is 77 x 53 cm (30 x 20 7/8 in) and is owned by the Government of France and is on the wall in the Louvre in Paris, France.
+            This figure of a woman, dressed in the Florentine fashion of her day and seated in a visionary, mountainous landscape. The Mona Lisa’s enigmatic expression, which seems both alluring and aloof, has given the portrait universal fame.</p>
+            <h2 class=monartist>Artist: Leonardo da Vinci</h2>
+      </div>
+
+      <!-- Monalisa ends -->
+
+
+      <!-- starry night starts -->
+
+      <div class="e">
+        <!-- <img src="../static/images/starry.jpg" alt="" class="starry"> -->
+        <img src="{{url_for('static',filename='images/starry.jpg')}}" alt="" class="starry">
+        <h2 class="st">The Starry Night (1889)</h2>
+        <p class="starp">The Starry Night is an oil on canvas by Dutch post-impressionist painter Vincent van Gogh. Painted in June 1889, it describes the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an ideal village.</p>
+        <h2 class="starartist">Artist:  Vincent van Gogh</h2>
+        <h2 class="starlocation">Location: The Museum of Modern Art</h2>
+      </div>
+
+      <!-- starry night ends -->
+
+
+      <!-- About starts -->
+      <div class="about">
+        <img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="100px" width="auto" class="aboutlogo">
+
+        <img src="{{url_for('static',filename='images/design(red).png')}}" alt="" height="100px" width="300px" class="design">
+
+        <img src="{{url_for('static',filename='images/contact.png')}}" alt="" height="150px" width="200px" class="contact">
+      </div>
+      <!-- About ends -->
+
+  </body>
+</html>

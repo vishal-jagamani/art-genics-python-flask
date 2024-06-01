@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+
+    <style type="text/css">
+      /* Navigation bar starts */
+      .alogo{
+        margin-left: 20px;
+      }
+      .navbar{
+        height: 60px;
+        background-color: #060c21;
+        margin-left: -8px;
+        margin-top: -8px;
+        width: 1519px;
+      }
+      ul li{
+        font-size: 20px;
+        float: left;
+        list-style: none;
+      }
+      ul li:first-child{
+        margin-left: 150px;
+      }
+      .first{
+        margin-top: -43px;
+      }
+      .two{
+        position: absolute;
+        margin-left: 900px;
+        margin-top: -16px;
+      }
+      .navbutton{
+        text-decoration: none;
+        color: #39FF14;
+        padding:22px 30px;
+        letter-spacing: 5px;
+      }
+      .navbutton:hover{
+        color:white;
+        transition: all .2s;
+        box-shadow: 0 0px 30px #39FF14,
+                    0 0px 60px #39FF14;
+      }
+      /* Navigation bar ends */
+
+      /* Profile starts */
+      .profile{
+        position: sticky;
+        height: 20vh;
+        width: 1519px;
+        margin-left: -8px;
+        margin-top: 2px;
+        background-color: #060c21;
+      }
+      .accountname{
+        color: #39ff14;
+        font-size: 40px;
+        letter-spacing: 10px;
+        text-decoration: underline;
+      }
+
+      .information{
+        height: 60vh;
+        width: 1519px;
+        background-color: #060c21;
+        margin-left: -8px;
+      }
+      .informationform{
+        height: 60vh;
+        width: 90vh;
+        box-shadow: 0 0px 20px #39FF14,
+                    0 0px 40px #39FF14,
+                    0 0px 80px #39FF14,
+                    0 0px 120px #39FF14,
+                    0 0px 160px #39ff14;
+      }
+      span{
+        font-size: 22px;
+        color: white;
+        letter-spacing: 5px;
+      }
+      .p{
+        color: #ccff00;
+        font-size: 28px;
+        letter-spacing: 8px;
+      }
+      .informationbutton{
+        color: #39FF14;
+        text-decoration: none;
+        font-size: 22px;
+        letter-spacing: 10px;
+        padding: 15px 30px;
+        border: 1px solid #39FF14;
+        border-radius: 10px;
+      }
+      .informationbutton:hover{
+        color: #060c21;
+        background-color: #39FF14;
+        box-shadow: 0 0px 20px #39FF14,
+                    0 0px 40px #39ff14;
+      }
+      /* Profile ends */
+
+      /* About starts  */
+      .about{
+        height: auto;
+        background-color: #060c21;
+        width:1519px;
+        margin-left: -8px;
+      }
+      .aboutlogo{
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 20px;
+      }
+      .design{
+      position: absolute;
+      margin-top: 40px;
+      margin-left: 500px;
+      }
+      .contact{
+        margin-top: 40px;
+        margin-left: 1000px;
+      }
+      /* About ends */
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Navigation bar starts -->
+    <div class="navbar">
+      <a href="/home" class="alogo"><img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="55px" width="auto" class="logo"></a>
+      <ul class="first">
+        <li><a href="/artworks" class="navbutton">Artworks</a></li>
+        <li><a href="/pastauctions" class="navbutton">Past Auctions</a></li>
+        <li><a href="/consign" class="navbutton">Consign</a></li>
+      </ul>
+      <ul class="two">
+        <li><a href="/profile/{{session.id}}" class="navbutton">Profile</a></li>
+        <li><a href="/logout" class="navbutton">Log Out</a></li>
+      </ul>
+    </div>
+    <!-- Navigation bar ends -->
+
+
+    <!-- Profile starts -->
+    <div class="profile">
+      <br><center><h1 class="accountname">{{res[1]}}</h1><br><br><br><br>
+    </div>
+
+    <center><div class="information">
+      <div class="informationform">
+        <br><p class="p"><span>Full Name: </span>{{res[1]}}</p>
+        <p class="p"><span>E-mail ID: </span>{{res[2]}}</p>
+        <p class="p"><span>Mobile No: </span>{{res[3]}}</p>
+        <p class="p"><span>Address: </span>{{res[4]}}</p>
+        <br><br><p><a href="/profileedit/{{res[0]}}" class="informationbutton">EDIT PROFILE</a></p>
+      </div>
+    </div>
+    <!-- Profile ends -->
+
+
+
+
+    <!-- About starts -->
+    <div class="about">
+      <img src="{{url_for('static',filename='images/logo.png')}}" alt="" height="100px" width="auto" class="aboutlogo">
+
+      <img src="{{url_for('static',filename='images/design(red).png')}}" alt="" height="100px" width="300px" class="design">
+
+      <img src="{{url_for('static',filename='images/contact.png')}}" alt="" height="150px" width="200px" class="contact">
+    </div>
+    <!-- About ends -->
+
+
+  </body>
+</html>
